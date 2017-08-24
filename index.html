@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>Percute</title>
+    <link rel="stylesheet" href="css/master.css">
+
+  </head>
+  <body>
+
+  	<div id="target" class="bar-width">
+ 		
+  	</div>
+
+  	<div id="safe-zone">
+      <div id="dead-bar"></div> 
+    </div>
+
+
+    <div id="shoot-container"></div>
+
+
+    <div id="weapons">
+      
+      <div id="weapon-freeze" class="weapon-btn">F- <span>0</span></div>
+
+      <div id="weapon-goBack" class="weapon-btn">G- <span>0</span></div>
+
+    </div>
+
+
+    <div id="bonus-container">
+      
+    </div>
+
+
+    <div id="game-info">
+
+      <div class="in-game">
+      
+        <div class="score">
+          <h4>Score</h4>
+          <p>0</p>
+        </div>
+
+        <div class="level">
+          <h4>Level</h4>
+          <p>1</p>
+        </div>
+
+        <div class="time">
+          <h4>Time</h4>
+          <p>0</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="game-init">
+
+      <div class="meteore-logo"></div>
+      <a href="#">Sauver le monde</a>
+
+      <div class="info-help">
+        <p>Tirer sur le point faibles de la <strong>météorite</strong> pour la repousser.</p>
+      </div>
+      
+    </div>
+
+    <div class="end">
+      <h3>YOU LOOSE</h3>
+      <table>
+        <tr>
+          <td class="title">score</td>
+          <td class="score">0</td>
+        </tr>
+        <tr>
+          <td class="title">time</td>
+          <td class="time">0</td>
+        </tr>
+        <tr>
+          <td class="title">level</td>
+          <td class="level">1</td>
+        </tr>
+      </table>
+      <p><a href="#" class="restart-game">
+        <img src="img/ic_autorenew_white_36dp.png" alt="">
+        <span>Recommencer</span></a></p>
+    </div>
+
+  	
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
+  
+    <script src="js/main.js"></script>
+
+  </body>
+</html>

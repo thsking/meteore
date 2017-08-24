@@ -1,0 +1,306 @@
+body { 
+	margin: 0;
+	background: $sky_color;
+	font-family: sans-serif;
+	background: url(../img/background-star.jpg);
+}
+
+.bar-width {
+
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	top: 0;
+	left: 0;
+	background: black;
+
+}
+
+#target {
+	
+	top: -280px;
+	height: 339px;
+	z-index: 50;
+
+	background: url(../img/sprite.png)no-repeat;
+	background-position: 0 -517px;
+
+	@include transition(all,ease-in,0.4s);
+
+	.contact-zone {
+		position: absolute;
+		bottom: 0px;
+		background: $target_contact_zone_color;
+		height: 10px;
+		width: 15%;	
+	}
+
+	.contact-zone.alpha {
+		left: 26%;
+	}
+
+}
+
+
+#safe-zone {
+
+	position: absolute;
+	width: 100%;
+	height: 248px;
+
+	background: url(../img/sprite.png)no-repeat;
+	background-position: 0 -250px;
+
+	bottom: 0;
+
+	#dead-bar {
+		display: none;
+		height: 10%;
+		background: $dead_zone_color;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+
+#shoot-container {
+
+	.shoot {
+
+		height: 15px;
+    	width: 5px;
+
+		background: $shoot_color;
+		background: url(../img/sprite.png)no-repeat;
+		background-position: -274px -143px;
+
+		position: absolute;
+
+		left: 35px;
+		top: 450px;
+
+		z-index: 0;
+
+		@include transition(all,linear,0.1s);
+
+	}
+
+}
+
+
+
+
+#weapons, #bonus-container {
+	display: none;
+}
+
+#weapons {
+
+	position: absolute;
+	top: 120px;
+	
+	right: 10px;
+	z-index: 200;
+
+	.weapon-btn {
+
+		$weapon_size: 62px;
+
+		width:  $weapon_size;
+		height:  $weapon_size;
+		background: $red;
+		margin-bottom: 15px;
+
+		color: white;
+		text-align: center;
+		line-height: $weapon_size;
+
+		&.selected {
+			background: #333;
+		}
+		&.hide { display: none;}
+	}
+
+}
+
+
+#bonus-container {
+
+
+	.bonus {
+		$bonusSize: 50px;
+		width: $bonusSize;
+		height: $bonusSize;
+		border-radius: $bonusSize;
+		background: black;
+
+		position: absolute;
+		left: 35px;
+		top: (70px - $bonusSize );
+		top: 85px;
+
+		z-index: 150;
+	}
+
+}
+
+#game-info {
+
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	text-align: center;
+	padding: 0 15px;
+
+	box-sizing: border-box;
+
+	z-index: 350;
+	color: white;
+
+
+
+	h4 {
+		text-transform: uppercase;
+		font-family: sans-serif;
+		font-size: 10px;
+		margin: 0;
+	}
+
+	p {
+		font-size: 25px;
+		margin: 0;
+	}
+	
+	.in-game {
+		.score {
+			float:right;
+		}
+	 	.level {
+	 		float: left;
+	 	}
+	 	.time {
+	 		h4 { font-size: 10px; }
+	 		p { font-size: 16px; }
+	 	}
+ 	}
+ 	
+
+}
+
+.game-init, .end {
+ 		background: url(../img/background-blur.jpg)no-repeat;
+	    height: 100%;
+	    width: 100%;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    color: white;
+	    padding-top: 140px;
+}
+.game-init {
+
+	z-index: 1000;
+	padding-top: 0;
+
+	.meteore-logo {
+		width: 175px; height: 88px;
+		background: url(../img/sprite.png)no-repeat;
+		background-position: -46px -143px;
+		margin: 0 auto;
+		margin-top: 210px;
+	}
+
+	a, .info-help {
+	    position: absolute;
+	    bottom: 123px;
+	    left: 0;
+	    right: 0;
+	}
+
+	a {
+	    display: block;		
+	    width: 243px;
+	    height: 88px;
+	    margin: 0 auto;
+	    background: url(../img/sprite.png) no-repeat;
+	    background-position: -14px -12px;
+	    text-indent: -999999px;
+	}
+
+	.info-help {
+		bottom: 26px;
+	    background: rgba(0,0,0,0.8);
+	    margin: 0 25px;
+	    padding: 5px 15px 5px 75px;
+	    color: $yellow;
+	    font-size: 18px;
+
+	    &:after {
+	    	$blockWidth:35px;
+	    	display:block;
+	    	content: "i";
+	    	width: $blockWidth; 
+	    	height: $blockWidth;
+	    	border:2px solid $yellow;
+	    	border-radius: $blockWidth;
+	    	position: absolute;
+	    	left: 15px;
+    		top: 23px;
+    		text-align: center;
+    		font-size: 24px;
+    		font-family: serif;
+    		font-weight: bold;
+    		line-height: $blockWidth;
+	    }
+	}
+
+
+
+	&.hide {
+		display: none;
+	}
+}
+.end {
+
+		display: none;
+ 		@include transition(opacity,ease-in,1s);
+ 		text-align: center;
+
+
+
+
+ 		h3 { 
+ 			font-size: 74px;
+ 			font-family: serif; 
+			margin: 20px 0;
+ 		}
+ 		table {
+		    width: 200px;
+		    margin: 0 auto;
+ 		}
+ 		td { 
+ 			font-size: 22px;
+ 				text-align: right;
+ 			&.title {
+ 				text-align: left;
+ 			}
+ 		}
+
+ 		a { 	
+ 			margin-top: 85px;
+ 			display: block;
+ 			color: white;
+ 			font-size: 12px;
+ 			text-decoration: none;
+ 			text-transform: uppercase;
+
+ 			span {display: block;}
+		}
+
+ 		&.show {
+			display: block;
+	    	z-index: 600;
+ 		}
+ 	}

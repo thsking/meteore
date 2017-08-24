@@ -1,0 +1,60 @@
+// vars 
+
+
+$white: #FFFFCB;
+$blue_sky: #62AB8F;
+$blue_ultra_bright: #C9FFD5;
+$blue_bright: #74CEB7;
+$blue: #2C858D;
+$blue_dark: #004056;
+$black: #070707;
+
+
+$red: #B26971;
+
+$yellow: #deb060;
+
+
+
+$target_color: $red;
+$target_contact_zone_color: #FFC9CF ;
+$target_contact_zone_color: $black ;
+
+$sky_color: #E2FFE9;
+$safe_zone_color:#C9FFD5;
+
+$shoot_color: #324035;
+
+$dead_zone_color: #B26971;
+
+
+// mixin
+
+@mixin transition($elt, $time, $easing){
+  -webkit-transition: $elt $time $easing;
+       -moz-transition: $elt $time $easing;
+        -ms-transition: $elt $time $easing;
+            transition: $elt $time $easing;
+}
+
+@mixin transitionLat($elt, $time, $easing, $lat){
+	-webkit-transition: $elt $time $easing $lat;
+       -moz-transition: $elt $time $easing $lat;
+        -ms-transition: $elt $time $easing $lat;
+            transition: $elt $time $easing $lat;
+}
+
+@mixin animation($name, $time, $alt, $easing){
+	-webkit-animation: $name $time $alt $easing;
+       -moz-animation: $name $time $alt $easing;
+        -ms-animation: $name $time $alt $easing;
+            animation: $name $time $alt $easing;
+}
+
+@mixin transform($transform){
+	-webkit-transform: $transform;
+       -moz-transform: $transform;
+        -ms-transform: $transform;
+            transform: $transform;
+
+}
